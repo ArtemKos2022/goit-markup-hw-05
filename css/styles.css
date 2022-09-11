@@ -12,14 +12,18 @@
 }
 
 /* Vars */
+
 :root {
   --main-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
+
   --primary-color: #212121;
   --white: #ffffff;
   --accent: #2196f3;
   --secondary-text-color: #757575;
   --social-links: #afb1b8;
+
+  --transition: 4250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -65,6 +69,7 @@ img {
 }
 
 /* HEADER */
+
 .menu-header {
   border-bottom: 1px solid #ececec;
   padding-top: 24px;
@@ -138,14 +143,13 @@ img {
   gap: 10px;
 }
 
-.nav-link,
-.nav-link-1 {
+
+.nav-link {
   color: var(--primary-color);
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.02em;
-  text-decoration: none;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition);
 }
 
 .main-nav > .list .current {
@@ -176,17 +180,17 @@ img {
   color: var(--accent);
 }
 
-.nav-link-1:hover,
-.nav-link-1:focus,
-.nav-link-1:active {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
   color: var(--accent);
 }
 
-.nav-link-1 {
+/* .nav-link-1 {
   color: var(--accent);
   font-weight: 500;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: color var(--transition);
+} */
 
 .list,
 .nav-item,
@@ -200,7 +204,6 @@ img {
 }
 
 .link,
-.nav-link-1,
 .contact-link {
   text-decoration: none;
 }
@@ -211,7 +214,7 @@ img {
   color: var(--secondary-text-color);
   font-weight: 500;
   text-decoration: none;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition);
 }
 
 .contact-link:hover,
@@ -273,8 +276,7 @@ img {
   text-align: center;
   letter-spacing: 0.06em;
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition), background-color var(--transition);
 }
 
 .module-btn-hero {
@@ -288,12 +290,13 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  transition: visibility var(--transition), opacity var(--transition);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: inherit;
+  visibility: hidden;
 }
 
 .modal {
@@ -308,7 +311,7 @@ img {
 
   min-height: 581px;
   min-width: 528px;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .close {
@@ -486,7 +489,7 @@ img {
   justify-content: center;
   color: var(--social-links);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .social-links:hover,
@@ -520,7 +523,7 @@ img {
   fill: #afb1b8;
   border-radius: 4px;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--transition), fill var(--transition);
 }
 
 .clients-link:hover,
@@ -553,9 +556,8 @@ img {
   display: inline-block;
   min-width: 73px;
   margin-right: 8px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition), background-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .filter-bnt-now.button.active {
@@ -615,7 +617,7 @@ img {
 .address-contact {
   font-style: normal;
   color: #ffffff99;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition);
 }
 
 .address-contact:hover,
@@ -689,7 +691,7 @@ img {
   justify-content: center;
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition);
 }
 
 .overlay-content {
@@ -732,8 +734,7 @@ img {
 }
 
 .cards-item {
-  width: 370;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition);
   width: calc((100% - 60px) / 3);
   border: 1px solid #eeeeee;
 }
@@ -741,9 +742,4 @@ img {
 .cards-item:hover,
 .cards-item:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.cards-item {
-  width: calc((100% - 60px) / 3);
-  border: 1px solid #eeeeee;
 }
