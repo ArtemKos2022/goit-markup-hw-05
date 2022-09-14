@@ -110,6 +110,7 @@ img {
 }
 
 /* Navigation */
+
 .main-logo {
   font-family: var(--secondary-font);
   font-size: 26px;
@@ -142,7 +143,6 @@ img {
   align-items: center;
   gap: 10px;
 }
-
 
 .nav-link {
   color: var(--primary-color);
@@ -185,12 +185,6 @@ img {
 .nav-link:active {
   color: var(--accent);
 }
-
-/* .nav-link-1 {
-  color: var(--accent);
-  font-weight: 500;
-  transition: color var(--transition);
-} */
 
 .list,
 .nav-item,
